@@ -37,18 +37,6 @@ namespace WebApplicationCRUD
             dt = g.usertab;
             GridView1.DataSource = dt;
             GridView1.DataBind();
-
-            /*string constr = ConfigurationManager.ConnectionStrings["MyTestDB"].ToString();
-            SqlConnection con = new SqlConnection(constr);
-            con.Open();
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM UserTab where Name like @UserID + '%'", con);
-            cmd.Parameters.AddWithValue("@UserID", lblmsg.Text.Trim());
-            SqlDataAdapter sda = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            GridView1.DataSource = dt;
-            GridView1.DataBind();*/
         }
 
         protected void Button3_Click(object sender, EventArgs e)
@@ -67,6 +55,11 @@ namespace WebApplicationCRUD
             d.UID = int.Parse(txtuid.Text);
             string res = client.Delete(d);
             lblmsg.Text = res.ToString();
+        }
+
+        protected void GridView1_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
         }
     }
 }
