@@ -17,9 +17,9 @@ namespace WebApplicationCRUD
         {
 
         }
-        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client(); //memanggil services refrences
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Button1_Click(object sender, EventArgs e) //insert
         {
             InsertUser u = new InsertUser();
             u.Name = TextBox1.Text;
@@ -29,7 +29,7 @@ namespace WebApplicationCRUD
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Button2_Click(object sender, EventArgs e) //search/display
         {
             ServiceReference1.gettestdata g = new ServiceReference1.gettestdata();
              g = client.GetInfo();
@@ -39,7 +39,7 @@ namespace WebApplicationCRUD
             GridView1.DataBind();
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button3_Click(object sender, EventArgs e) //update
         {
             UpdateUser u = new UpdateUser();
             u.UID = int.Parse(txtuid.Text);
@@ -49,7 +49,7 @@ namespace WebApplicationCRUD
             lblmsg.Text = result.ToString();
         }
 
-        protected void Button4_Click(object sender, EventArgs e)
+        protected void Button4_Click(object sender, EventArgs e) //Delete
         {
             DeleteUser d = new DeleteUser();
             d.UID = int.Parse(txtuid.Text);
